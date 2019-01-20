@@ -1,0 +1,38 @@
+<!--Homepage-->
+<div class="container">
+    <div class="col-md-12 jumbotron">
+        <div class="text-center">
+            <h1>BBC Mongo Scraper</h1>
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        {{#if article}}
+            {{#each article}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>{{this.title}}</h4>
+                </div>
+                <div class="panel-body">
+                    <p> {{this.summary}}</p>
+                    <a href={{this.link}} target="_blank">{{this.link}}</a>
+                    <br><br>
+                    <button type="button" class="btn btn-success save" data-id={{this._id}}>Save Article</button>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h4>There does not appear to be any new articles.</h4>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+    <div class="col-md-1">
+        <!--SPACER-->
+    </div>
+    <div class="col-md-3 notes">
+        <!--Note holder-->
+    </div>
+</div>
